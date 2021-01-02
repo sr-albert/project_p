@@ -28,7 +28,6 @@ class _QrScannerPageState extends State<QrScannerPage> {
   }
 
   void _onQRViewCreated(QRViewController _qrView) {
-    debugPrint("-------- QR VIEW CREATED --------");
     this.controller = _qrView;
     controller.scannedDataStream.listen((scanData) {
       setState(() {
