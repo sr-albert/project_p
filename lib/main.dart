@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:project_p/pages/qr_scanner_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -39,32 +40,43 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _onPressed(String mode) {
-    switch(mode) {
-      case "qr" : Navigator.push(context, MaterialPageRoute(builder: (context) => QrScannerPage())); break;
-      default: 
-    return debugPrint("PRessed button qrscanner");
-
+    switch (mode) {
+      case "qr":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => QrScannerPage()));
+        break;
+      case "authentication":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => QrScannerPage()));
+        break;
+      default:
+        return debugPrint("PRessed button qrscanner");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("PROJECT P"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-                child: Text("QR SCANNER"),
-                onPressed: () {
-                  _onPressed("qr");
-                }),
-          ],
+        appBar: AppBar(
+          title: Text("PROJECT P"),
         ),
-      )  // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                  child: Text("QR SCANNER"),
+                  onPressed: () {
+                    _onPressed("qr");
+                  }),
+              FlatButton(
+                  child: Text("Authentication"),
+                  onPressed: () {
+                    _onPressed("qr");
+                  }),
+            ],
+          ),
+        ) // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
