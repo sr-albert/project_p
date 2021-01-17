@@ -12,7 +12,7 @@ class _BiometricSercurityPageState extends State<BiometricSercurityPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Authentication page"),
+        child: Text("Biometric and sercurity  page"),
       ),
     );
   }
