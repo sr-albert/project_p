@@ -1,6 +1,5 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:project_p/pages/qr_scanner_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +13,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => MyHomePage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
@@ -30,41 +32,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _onPressed(String mode) {
-    switch(mode) {
-      case "qr" : Navigator.push(context, MaterialPageRoute(builder: (context) => QrScannerPage())); break;
-      default: 
-    return debugPrint("PRessed button qrscanner");
-
-    }
-  }
+  void _onPressed(String mode) {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("PROJECT P"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-                child: Text("QR SCANNER"),
-                onPressed: () {
-                  _onPressed("qr");
-                }),
-          ],
+        appBar: AppBar(
+          title: Text("PROJECT P"),
         ),
-      )  // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[],
+          ),
+        ) // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
