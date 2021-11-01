@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _onPressed(String mode) {}
+
+
+  Future<void> share() async {
+    await FlutterShare.share(
+        title: 'Dizim share',
+        text: 'Dizim share text',
+        linkUrl: 'https://dizim.ai/',
+        chooserTitle: 'Dizim Chooser Title');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[],
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              TextButton.icon(
+                  onPressed: share,
+                  icon: Icon(Icons.share),
+                  label: Text("Share"))
+            ],
           ),
         ) // This trailing comma makes auto-formatting nicer for build methods.
         );
