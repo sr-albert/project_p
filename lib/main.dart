@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
+import 'package:project_p/scanner/lib/main.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => MyHomePage(),
+        "/scanner": (context) => ScannerApp(),
       },
       debugShowCheckedModeBanner: false,
     );
@@ -33,14 +35,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   Future<void> share() async {
     await FlutterShare.share(
         title: 'Dizim share',
         text: 'Dizim share text',
         linkUrl: 'https://dizim.ai/',
         chooserTitle: 'Dizim Chooser Title');
+  }
+
+  void openScannerApp(BuildContext context) {
+    Navigator.pushNamed(context, "/scanner");
   }
 
   @override
@@ -57,7 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
               TextButton.icon(
                   onPressed: share,
                   icon: Icon(Icons.share),
-                  label: Text("Share"))
+                  label: Text("Share")),
+              TextButton.icon(
+                  onPressed: () => {openScannerApp(context)},
+                  icon: Icon(Icons.scanner),
+                  label: Text("Scanner App"))
             ],
           ),
         ) // This trailing comma makes auto-formatting nicer for build methods.
