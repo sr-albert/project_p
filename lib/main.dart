@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
-import 'package:project_p/scanner/lib/main.dart';
+import 'package:project_p/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,18 +15,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/",
-      routes: {
-        "/": (context) => MyHomePage(),
-        "/scanner": (context) => ScannerApp(),
-      },
+      initialRoute: initRoute(),
+      routes: appRoutes(context),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 

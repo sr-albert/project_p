@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_p/scanner/lib/share/pages/login.page.dart';
+import 'package:project_p/modules/scanner/lib/share/pages/login.page.dart';
 
 void main() {
   runApp(ScannerApp());
