@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import "package:flutter/material.dart";
-import 'package:reco_test/app/theme/theme_constant.dart';
-import 'package:reco_test/app/utils/hexcolor.dart';
+import 'package:project_p/modules/scanner/lib/share/theme/theme_constant.dart';
+import 'package:project_p/modules/scanner/lib/share/utils/hexcolor.dart';
 
 class CusInputWidget extends StatelessWidget {
   const CusInputWidget(

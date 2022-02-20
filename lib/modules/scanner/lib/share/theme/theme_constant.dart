@@ -1,4 +1,4 @@
-import 'package:reco_test/app/utils/hexcolor.dart';
+import 'package:project_p/modules/scanner/lib/share/utils/hexcolor.dart';
 import 'package:flutter/material.dart';
 
 class ThemeConstant {
