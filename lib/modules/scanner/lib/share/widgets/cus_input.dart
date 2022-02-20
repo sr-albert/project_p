@@ -63,8 +63,10 @@ class CusInputWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
       width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+      ),
       child: Column(
         children: [
           TextFormField(

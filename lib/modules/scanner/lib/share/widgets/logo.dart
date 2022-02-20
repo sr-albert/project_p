@@ -6,9 +6,10 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: 60,
-      decoration: BoxDecoration(color: Colors.grey),
+      height: 100,
+      width: 100,
+      decoration: BoxDecoration(
+          color: Colors.grey, borderRadius: BorderRadius.circular(10)),
     );
   }
 }
